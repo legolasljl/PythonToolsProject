@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "智能条款比对工具配置文件",
+    "last_updated": "2025-12-21"
+  },
+
+  "thresholds": {
+    "exact_min": 0.98,
+    "semantic_min": 0.85,
+    "keyword_min": 0.60,
+    "fuzzy_min": 0.40,
+    "accept_min": 0.15
+  },
+
+  "client_en_cn_map": {
+    "_comment": "客户英文条款 -> 中文翻译映射",
+    "interpretation & headings": "通译和标题条款",
+    "reinstatement value": "重置价值条款",
+    "reinstatement value clause": "重置价值条款",
+    "time adjustment": "72小时条款",
+    "time adjustment (72 hours)": "72小时条款",
+    "civil authorities clause": "公共当局扩展条款",
+    "civil authorities": "公共当局扩展条款",
+    "errors and omissions clause": "错误和遗漏条款",
+    "loss notification clause": "损失通知条款",
+    "no control clause": "不受控制条款"
+  },
+
+  "semantic_alias_map": {
+    "_comment": "语义别名映射（同一概念不同表述）",
+    "污染保险": "意外污染责任",
+    "污染责任": "意外污染责任",
+    "露天财产": "露天及简易建筑内存放财产",
+    "损害防止": "阻止损失",
+    "施救费用": "阻止损失",
+    "崩塌沉降": "地面突然下陷下沉",
+    "地面下陷": "地面突然下陷下沉"
+  },
+
+  "keyword_extract_map": {
+    "_comment": "关键词提取映射",
+    "污染": ["污染", "意外污染", "pollution"],
+    "地震": ["地震", "震动", "earthquake"],
+    "盗窃": ["盗窃", "盗抢", "抢劫", "burglary", "theft"],
+    "洪水": ["洪水", "水灾", "flood"],
+    "重置": ["重置", "重建", "reinstatement", "replacement"]
+  },
+
+  "exact_clause_map": {
+    "_comment": "精确条款名映射（客户条款 -> 条款库名称）",
+    "72小时条款": "时间调整（72小时）",
+    "通道堵塞条款": "通道堵塞",
+    "关联扩展条款": "关联扩展"
+  },
+
+  "penalty_keywords": ["打孔盗气"],
+
+  "noise_words": [
+    "企业财产保险", "附加", "扩展", "条款", "险",
+    "（A款）", "（B款）", "2025版", "2024版",
+    "clause", "extension", "cover", "insurance"
+  ]
+}
