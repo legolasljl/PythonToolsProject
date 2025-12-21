@@ -146,20 +146,29 @@ class ClauseConfigManager:
 
     def _get_default_config_path(self) -> Path:
         """获取默认配置文件路径"""
-        # 优先查找与脚本同目录的配置
-        script_dir = Path(__file__).parent
-        config_path = script_dir / "clause_config.json"
+        import sys
 
-        if config_path.exists():
-            return config_path
-
-        # 其次查找用户目录
+        # 1. 优先查找用户目录（用户自定义配置优先）
         user_config = Path.home() / ".clause_diff" / "config.json"
         if user_config.exists():
             return user_config
 
-        # 返回默认位置（可能不存在）
-        return config_path
+        # 2. 查找与脚本同目录的配置
+        script_dir = Path(__file__).parent
+        config_path = script_dir / "clause_config.json"
+        if config_path.exists():
+            return config_path
+
+        # 3. PyInstaller 打包后的资源目录
+        if getattr(sys, 'frozen', False):
+            # 打包后的应用，资源在 _MEIPASS 目录
+            bundle_dir = Path(sys._MEIPASS)
+            bundled_config = bundle_dir / "clause_config.json"
+            if bundled_config.exists():
+                return bundled_config
+
+        # 4. 返回用户配置目录作为默认保存位置
+        return user_config
 
     def load(self, config_path: Optional[str] = None) -> bool:
         """
@@ -257,6 +266,10 @@ class ClauseConfigManager:
                 self.noise_words + external['noise_words']
             ))
 
+    def _get_user_config_path(self) -> Path:
+        """获取用户配置目录（用于保存）"""
+        return Path.home() / ".clause_diff" / "config.json"
+
     def save(self, config_path: Optional[str] = None) -> bool:
         """
         保存配置到文件
@@ -267,10 +280,22 @@ class ClauseConfigManager:
         Returns:
             是否保存成功
         """
-        save_path = Path(config_path) if config_path else self._config_path
+        import sys
 
-        if not save_path:
-            save_path = self._get_default_config_path()
+        if config_path:
+            save_path = Path(config_path)
+        elif self._config_path:
+            # 如果是打包应用且当前路径是 _MEIPASS，则保存到用户目录
+            if getattr(sys, 'frozen', False):
+                if str(self._config_path).startswith(str(getattr(sys, '_MEIPASS', ''))):
+                    save_path = self._get_user_config_path()
+                    logger.info("打包应用：配置将保存到用户目录")
+                else:
+                    save_path = self._config_path
+            else:
+                save_path = self._config_path
+        else:
+            save_path = self._get_user_config_path()
 
         # 确保目录存在
         save_path.parent.mkdir(parents=True, exist_ok=True)
