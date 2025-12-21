@@ -1,0 +1,470 @@
+{
+  "client_en_cn_map": {
+    "INTERPRETATION & HEADINGS": "通译和标题条款",
+    "60 DAYS' NOTICE OF CANCELLATION BY INSURER": "保险人60天取消通知条款",
+    "EXPEDITING COSTS": "加快费用条款",
+    "ALL OTHER CONTENTS": "其它物品条款",
+    "ALTERATIONS, ADDITIONS AND REPAIRS": "变更和维修条款",
+    "ESCALATION": "自动升值扩展条款",
+    "AUTOMATIC COVER FOR NEW ASSET, OR NEWLY SET UP COMPANIES AND LOCATIONS": "自动扩展承保新增资产、新增公司和新增地址条款",
+    "UNNAMED LOCATION CLAUSE": "未列明地址条款",
+    "AUTOMATIC CAPITAL ADDITIONS": "增加资产条款",
+    "STOCK DECLARATION & ADJUSTMENT": "仓储财产申报条款",
+    "AUTOMATIC REINSTATEMENT OF SUM INSURED": "自动恢复保险金额条款",
+    "BRAND OR TRADEMARK": "品牌和商标标识条款",
+    "PROFESSIONAL FEES AND CLAIM PREPARATION COSTS": "专业费用及索赔准备费用条款",
+    "TAX CLAUSE": "税金约定条款",
+    "EARTHQUAKE AND TSUNAMI CLAUSE": "地震扩展条款",
+    "ERRORS AND OMISSIONS": "错误和遗漏条款",
+    "THEFT AND ROBBERY": "盗窃、抢劫扩展条款",
+    "FULL THEFT, BURGLARY AND ROBBERY COVER": "盗窃、抢劫全险条款",
+    "DESCRIPTION OF PROPERTY INSURED": "保险财产描述条款",
+    "LOSS NOTIFICATION": "损失通知条款",
+    "NO CONTROL": "非被保险人控制条款",
+    "PUBLIC UTILITY CLAUSE": "公共事业条款",
+    "MULTIPLE INSUREDS CLAUSE": "多个被保险人条款",
+    "PUBLIC AUTHORITIES": "公共机构条款",
+    "FROZEN AND REFRIGERATED PROPERTY CLAUSE": "冷冻冷藏财产条款",
+    "REMOVAL OF DEBRIS": "清除残骸条款",
+    "REINSTATEMENT": "重置价值条款",
+    "STRIKE, RIOT, CIVIL COMMOTION": "罢工、暴动、民众骚乱条款",
+    "TEMPORARY REMOVAL": "临时移动条款",
+    "TIME ADJUSTMENT": "时间调整条款（72小时）",
+    "VEHICLE LOAD": "车辆装载条款",
+    "80% CO-INSURANCE": "80%共保条款",
+    "OUTSIDE ANCILLIARY DEVICES OF BUILDINGS": "建筑物室外附属设备条款",
+    "CONTRACT PRICE": "合同价格条款",
+    "PREFERENCE OF ORIGINAL SUPPLIER": "原供应商优先条款",
+    "NOMINATED LOSS ADJUSTER CLAUSE": "指定公估人条款",
+    "PORTABLE DEVICES EXTENSION CLAUSE": "便携式设备扩展条款",
+    "BREAKAGE OF GLASS EXTENSION CLAUSE": "玻璃破碎扩展条款",
+    "PROPERTY UNDER CARE, CUSTODY AND CONTROL CLAUSE": "代管财产条款",
+    "MORTGAGE CLAUSE": "抵押条款",
+    "WATER TANK AND WATER PIPE BURST EXTENSION CLAUSE": "水箱水管爆裂扩展条款",
+    "NATURE AND GRADUAL LOSS EXCLUSION": "自然及渐变损失除外条款",
+    "INSURED AMOUNT BREAKDOWN CLAUSE": "保额分项条款",
+    "SCOPE OF COVER CLAUSE": "承保范围条款",
+    "MAINTENANCE COST CLAUSE": "维护费用条款",
+    "100% PAYROLL CLAUSE": "100%工资条款",
+    "LOSS OF BOOK DEBTS CLAUSE": "账册损失条款",
+    "ACCUMULATED STOCK CLAUSE": "累积库存条款",
+    "OUTPUT OPTION CLAUSE": "产出选项条款",
+    "CIVIL AUTHORITIES CLAUSE": "政府机构条款",
+    "PREVENTION OF ACCESS CLAUSE": "阻止进入条款",
+    "EXTRA EXPENSES": "额外费用条款",
+    "FAILURE OF PUBLIC UTILITIES CLAUSE": "公共设施故障条款",
+    "INTERDEPENDENCY EXTENSION CLAUSE": "相互依存扩展条款",
+    "MURDER, SUICIDE OR DISEASE OR DEFECTIVE SANITATION CLAUSE": "谋杀、自杀、疾病或卫生缺陷条款",
+    "NEW BUSINESS CLAUSE": "新业务条款",
+    "PREMIUM ADJUSTMENT CLAUSE": "保费调整条款",
+    "LEASED BUILDING/PREMISES EXTENSION": "租赁建筑/场所扩展条款",
+    "CONTINUOUS LOSS CLAUSE": "持续损失条款",
+    "WAIVE DEDUCTIBLE CLAUSE": "免赔额豁免条款",
+    "BOILER AND PRESSURE VESSEL EXPLORSION CLAUSE": "锅炉及压力容器爆炸条款",
+    "MANUFACTURER OR SUPPLIER'S WARRANTIES": "制造商或供应商保证条款",
+    "ACQUISITIONS": "收购条款（90天申报期）",
+    "SHUTDOWN AND RESTART COST CLAUSE": "停工重启费用条款",
+    "OPERATING MEDIA, VULNERABLE OR CONSUMABLES PROPERTY EXTENSION": "操作媒介及易耗品扩展条款",
+    "REPLACEMENT VALUE": "重置价值条款",
+    "INTELLECTUAL PROPERTY PROTECTION": "知识产权保护条款",
+    "NOMINATED ADJUSTER": "指定公估人条款"
+  },
+  "library_matches": {
+    "通译和标题条款": {
+      "english": "INTERPRETATION & HEADINGS",
+      "best_match": "企业财产保险附加通译和标题条款",
+      "score": 0.636,
+      "sheet": "企业财产保险附加条款"
+    },
+    "保险人60天取消通知条款": {
+      "english": "60 DAYS' NOTICE OF CANCELLATION BY INSURER",
+      "best_match": "企业财产保险附加损失通知条款",
+      "score": 0.5,
+      "sheet": "企业财产保险附加条款"
+    },
+    "加快费用条款": {
+      "english": "EXPEDITING COSTS",
+      "best_match": "企业财产保险附加额外费用条款",
+      "score": 0.65,
+      "sheet": "企业财产保险附加条款"
+    },
+    "其它物品条款": {
+      "english": "ALL OTHER CONTENTS",
+      "best_match": "企业财产保险附加所有其它物品条款",
+      "score": 0.545,
+      "sheet": "企业财产保险附加条款"
+    },
+    "变更和维修条款": {
+      "english": "ALTERATIONS, ADDITIONS AND REPAIRS",
+      "best_match": "企业财产保险附加场外维修及改造条款",
+      "score": 0.333,
+      "sheet": "企业财产保险附加条款"
+    },
+    "自动升值扩展条款": {
+      "english": "ESCALATION",
+      "best_match": "企业财产保险附加自动升值条款",
+      "score": 0.695,
+      "sheet": "企业财产保险附加条款"
+    },
+    "自动扩展承保新增资产、新增公司和新增地址条款": {
+      "english": "AUTOMATIC COVER FOR NEW ASSET, OR NEWLY SET UP COMPANIES AND LOCATIONS",
+      "best_match": "企业财产保险附加自动承保新租金收入条款",
+      "score": 0.5,
+      "sheet": "企业财产保险附加条款"
+    },
+    "未列明地址条款": {
+      "english": "UNNAMED LOCATION CLAUSE",
+      "best_match": "企业财产保险附加扩展承保中国境内未列明保险地点条款",
+      "score": 0.375,
+      "sheet": "企业财产保险附加条款"
+    },
+    "增加资产条款": {
+      "english": "AUTOMATIC CAPITAL ADDITIONS",
+      "best_match": "企业财产保险附加增加资产条款(A款）",
+      "score": 0.571,
+      "sheet": "企业财产保险附加条款"
+    },
+    "仓储财产申报条款": {
+      "english": "STOCK DECLARATION & ADJUSTMENT",
+      "best_match": "企业财产保险附加仓储财产申报条款",
+      "score": 0.967,
+      "sheet": "企业财产保险附加条款"
+    },
+    "自动恢复保险金额条款": {
+      "english": "AUTOMATIC REINSTATEMENT OF SUM INSURED",
+      "best_match": "企业财产保险附加自动恢复保险金额条款",
+      "score": 1.014,
+      "sheet": "企业财产保险附加条款"
+    },
+    "品牌和商标标识条款": {
+      "english": "BRAND OR TRADEMARK",
+      "best_match": "企业财产保险附加商标及标签条款",
+      "score": 0.417,
+      "sheet": "企业财产保险附加条款"
+    },
+    "专业费用及索赔准备费用条款": {
+      "english": "PROFESSIONAL FEES AND CLAIM PREPARATION COSTS",
+      "best_match": "企业财产保险附加索赔费用条款",
+      "score": 0.669,
+      "sheet": "企业财产保险附加条款"
+    },
+    "税金约定条款": {
+      "english": "TAX CLAUSE",
+      "best_match": "企业财产保险附加保险金额含税约定条款",
+      "score": 0.417,
+      "sheet": "企业财产保险附加条款"
+    },
+    "地震扩展条款": {
+      "english": "EARTHQUAKE AND TSUNAMI CLAUSE",
+      "best_match": "企业财产保险附加地震扩展条款",
+      "score": 0.75,
+      "sheet": "企业财产保险附加条款"
+    },
+    "错误和遗漏条款": {
+      "english": "ERRORS AND OMISSIONS",
+      "best_match": "企业财产保险附加错误和遗漏条款",
+      "score": 0.636,
+      "sheet": "企业财产保险附加条款"
+    },
+    "盗窃、抢劫扩展条款": {
+      "english": "THEFT AND ROBBERY",
+      "best_match": "企业财产保险附加盗窃、抢劫保险（2025版）条款",
+      "score": 0.63,
+      "sheet": "企业财产保险附加条款"
+    },
+    "盗窃、抢劫全险条款": {
+      "english": "FULL THEFT, BURGLARY AND ROBBERY COVER",
+      "best_match": "企业财产保险附加盗窃、抢劫保险（2025版）条款",
+      "score": 0.71,
+      "sheet": "企业财产保险附加条款"
+    },
+    "保险财产描述条款": {
+      "english": "DESCRIPTION OF PROPERTY INSURED",
+      "best_match": "企业财产保险附加指明财产条款",
+      "score": 0.545,
+      "sheet": "企业财产保险附加条款"
+    },
+    "损失通知条款": {
+      "english": "LOSS NOTIFICATION",
+      "best_match": "企业财产保险附加损失通知条款",
+      "score": 0.6,
+      "sheet": "企业财产保险附加条款"
+    },
+    "非被保险人控制条款": {
+      "english": "NO CONTROL",
+      "best_match": "企业财产保险附加不可控制条款",
+      "score": 0.522,
+      "sheet": "企业财产保险附加条款"
+    },
+    "公共事业条款": {
+      "english": "PUBLIC UTILITY CLAUSE",
+      "best_match": "企业财产保险附加公众事业设备扩展条款",
+      "score": 0.417,
+      "sheet": "企业财产保险附加条款"
+    },
+    "多个被保险人条款": {
+      "english": "MULTIPLE INSUREDS CLAUSE",
+      "best_match": "企业财产保险附加被保险人条款",
+      "score": 0.545,
+      "sheet": "企业财产保险附加条款"
+    },
+    "公共机构条款": {
+      "english": "PUBLIC AUTHORITIES",
+      "best_match": "企业财产保险附加公共当局扩展条款",
+      "score": 0.364,
+      "sheet": "企业财产保险附加条款"
+    },
+    "冷冻冷藏财产条款": {
+      "english": "FROZEN AND REFRIGERATED PROPERTY CLAUSE",
+      "best_match": "企业财产保险附加冷冻、冷藏物品变质条款",
+      "score": 0.612,
+      "sheet": "企业财产保险附加条款"
+    },
+    "清除残骸条款": {
+      "english": "REMOVAL OF DEBRIS",
+      "best_match": "企业财产保险附加清理残骸条款",
+      "score": 0.65,
+      "sheet": "企业财产保险附加条款"
+    },
+    "重置价值条款": {
+      "english": "REPLACEMENT VALUE",
+      "best_match": "企业财产保险附加重置价值条款",
+      "score": 0.75,
+      "sheet": "企业财产保险附加条款"
+    },
+    "罢工、暴动、民众骚乱条款": {
+      "english": "STRIKE, RIOT, CIVIL COMMOTION",
+      "best_match": "企业财产保险附加罢工、暴动、民众骚乱条款",
+      "score": 1.014,
+      "sheet": "企业财产保险附加条款"
+    },
+    "临时移动条款": {
+      "english": "TEMPORARY REMOVAL",
+      "best_match": "企业财产保险附加临时移动条款",
+      "score": 0.75,
+      "sheet": "企业财产保险附加条款"
+    },
+    "时间调整条款（72小时）": {
+      "english": "TIME ADJUSTMENT",
+      "best_match": "企业财产保险附加时间调整条款",
+      "score": 0.545,
+      "sheet": "企业财产保险附加条款"
+    },
+    "车辆装载条款": {
+      "english": "VEHICLE LOAD",
+      "best_match": "企业财产保险附加车辆装载物条款",
+      "score": 0.571,
+      "sheet": "企业财产保险附加条款"
+    },
+    "80%共保条款": {
+      "english": "80% CO-INSURANCE",
+      "best_match": "企业财产保险附加80%共保条款",
+      "score": 0.5,
+      "sheet": "企业财产保险附加条款"
+    },
+    "建筑物室外附属设备条款": {
+      "english": "OUTSIDE ANCILLIARY DEVICES OF BUILDINGS",
+      "best_match": "企业财产保险附加建筑物外部附属设施条款（A款）",
+      "score": 0.581,
+      "sheet": "企业财产保险附加条款"
+    },
+    "合同价格条款": {
+      "english": "CONTRACT PRICE",
+      "best_match": "企业财产保险附加合同价格条款",
+      "score": 0.6,
+      "sheet": "企业财产保险附加条款"
+    },
+    "原供应商优先条款": {
+      "english": "PREFERENCE OF ORIGINAL SUPPLIER",
+      "best_match": "企业财产保险附加优先使用原供应商条款（2025版）",
+      "score": 0.444,
+      "sheet": "企业财产保险附加条款"
+    },
+    "指定公估人条款": {
+      "english": "NOMINATED ADJUSTER",
+      "best_match": "企业财产保险附加指定公估人条款（A款）",
+      "score": 0.609,
+      "sheet": "企业财产保险附加条款"
+    },
+    "便携式设备扩展条款": {
+      "english": "PORTABLE DEVICES EXTENSION CLAUSE",
+      "best_match": "企业财产保险附加便携式设备扩展条款",
+      "score": 0.692,
+      "sheet": "企业财产保险附加条款"
+    },
+    "玻璃破碎扩展条款": {
+      "english": "BREAKAGE OF GLASS EXTENSION CLAUSE",
+      "best_match": "企业财产保险附加玻璃破碎扩展条款（C款）",
+      "score": 0.79,
+      "sheet": "企业财产保险附加条款"
+    },
+    "代管财产条款": {
+      "english": "PROPERTY UNDER CARE, CUSTODY AND CONTROL CLAUSE",
+      "best_match": "企业财产保险附加85％扩展条款",
+      "score": 0.444,
+      "sheet": "企业财产保险附加条款"
+    },
+    "抵押条款": {
+      "english": "MORTGAGE CLAUSE",
+      "best_match": "企业财产保险附加抵押承受人条款",
+      "score": 0.571,
+      "sheet": "企业财产保险附加条款"
+    },
+    "水箱水管爆裂扩展条款": {
+      "english": "WATER TANK AND WATER PIPE BURST EXTENSION CLAUSE",
+      "best_match": "企业财产保险附加水箱、水管爆裂扩展条款（2025版）",
+      "score": 0.99,
+      "sheet": "企业财产保险附加条款"
+    },
+    "自然及渐变损失除外条款": {
+      "english": "NATURE AND GRADUAL LOSS EXCLUSION",
+      "best_match": "企业财产保险附加软件及数据相关损失除外条款",
+      "score": 0.438,
+      "sheet": "企业财产保险附加条款"
+    },
+    "保额分项条款": {
+      "english": "INSURED AMOUNT BREAKDOWN CLAUSE",
+      "best_match": "企业财产保险附加税项条款",
+      "score": 0.444,
+      "sheet": "企业财产保险附加条款"
+    },
+    "承保范围条款": {
+      "english": "SCOPE OF COVER CLAUSE",
+      "best_match": "企业财产保险附加自动承保条款",
+      "score": 0.4,
+      "sheet": "企业财产保险附加条款"
+    },
+    "维护费用条款": {
+      "english": "MAINTENANCE COST CLAUSE",
+      "best_match": "企业财产保险附加临时防护费用条款",
+      "score": 0.605,
+      "sheet": "企业财产保险附加条款"
+    },
+    "100%工资条款": {
+      "english": "100% PAYROLL CLAUSE",
+      "best_match": "企业财产保险附加工具条款",
+      "score": 0.375,
+      "sheet": "企业财产保险附加条款"
+    },
+    "账册损失条款": {
+      "english": "LOSS OF BOOK DEBTS CLAUSE",
+      "best_match": "企业财产保险附加应收账款损失条款",
+      "score": 0.455,
+      "sheet": "企业财产保险附加条款"
+    },
+    "累积库存条款": {
+      "english": "ACCUMULATED STOCK CLAUSE",
+      "best_match": "企业财产保险附加累积库存条款",
+      "score": 0.6,
+      "sheet": "企业财产保险附加条款"
+    },
+    "产出选项条款": {
+      "english": "OUTPUT OPTION CLAUSE",
+      "best_match": "企业财产保险附加税项条款",
+      "score": 0.444,
+      "sheet": "企业财产保险附加条款"
+    },
+    "政府机构条款": {
+      "english": "CIVIL AUTHORITIES CLAUSE",
+      "best_match": "企业财产保险附加政府限制条款",
+      "score": 0.4,
+      "sheet": "企业财产保险附加条款"
+    },
+    "阻止进入条款": {
+      "english": "PREVENTION OF ACCESS CLAUSE",
+      "best_match": "企业财产保险附加未入账财产条款",
+      "score": 0.286,
+      "sheet": "企业财产保险附加条款"
+    },
+    "额外费用条款": {
+      "english": "EXTRA EXPENSES",
+      "best_match": "企业财产保险附加额外费用条款",
+      "score": 0.75,
+      "sheet": "企业财产保险附加条款"
+    },
+    "公共设施故障条款": {
+      "english": "FAILURE OF PUBLIC UTILITIES CLAUSE",
+      "best_match": "企业财产保险附加公共服务设施条款",
+      "score": 0.5,
+      "sheet": "企业财产保险附加条款"
+    },
+    "相互依存扩展条款": {
+      "english": "INTERDEPENDENCY EXTENSION CLAUSE",
+      "best_match": "企业财产保险附加85％扩展条款",
+      "score": 0.4,
+      "sheet": "企业财产保险附加条款"
+    },
+    "谋杀、自杀、疾病或卫生缺陷条款": {
+      "english": "MURDER, SUICIDE OR DISEASE OR DEFECTIVE SANITATION CLAUSE",
+      "best_match": "企业财产保险附加内在或潜在缺陷条款",
+      "score": 0.333,
+      "sheet": "企业财产保险附加条款"
+    },
+    "新业务条款": {
+      "english": "NEW BUSINESS CLAUSE",
+      "best_match": "企业财产保险附加新营业条款",
+      "score": 0.444,
+      "sheet": "企业财产保险附加条款"
+    },
+    "保费调整条款": {
+      "english": "PREMIUM ADJUSTMENT CLAUSE",
+      "best_match": "企业财产保险附加时间调整条款",
+      "score": 0.5,
+      "sheet": "企业财产保险附加条款"
+    },
+    "租赁建筑/场所扩展条款": {
+      "english": "LEASED BUILDING/PREMISES EXTENSION",
+      "best_match": "企业财产保险附加建筑、安装工程扩展条款",
+      "score": 0.429,
+      "sheet": "企业财产保险附加条款"
+    },
+    "持续损失条款": {
+      "english": "CONTINUOUS LOSS CLAUSE",
+      "best_match": "企业财产保险附加消防损失条款",
+      "score": 0.4,
+      "sheet": "企业财产保险附加条款"
+    },
+    "免赔额豁免条款": {
+      "english": "WAIVE DEDUCTIBLE CLAUSE",
+      "best_match": "企业财产保险附加免赔额豁免条款",
+      "score": 0.636,
+      "sheet": "企业财产保险附加条款"
+    },
+    "锅炉及压力容器爆炸条款": {
+      "english": "BOILER AND PRESSURE VESSEL EXPLORSION CLAUSE",
+      "best_match": "企业财产保险附加锅炉及压力容器爆炸条款",
+      "score": 1.033,
+      "sheet": "企业财产保险附加条款"
+    },
+    "制造商或供应商保证条款": {
+      "english": "MANUFACTURER OR SUPPLIER'S WARRANTIES",
+      "best_match": "企业财产保险附加顾客、供应商条款",
+      "score": 0.385,
+      "sheet": "企业财产保险附加条款"
+    },
+    "收购条款（90天申报期）": {
+      "english": "ACQUISITIONS",
+      "best_match": "企业财产保险附加申报资料条款（2025版）",
+      "score": 0.324,
+      "sheet": "企业财产保险附加条款"
+    },
+    "停工重启费用条款": {
+      "english": "SHUTDOWN AND RESTART COST CLAUSE",
+      "best_match": "企业财产保险附加赶工费用条款",
+      "score": 0.605,
+      "sheet": "企业财产保险附加条款"
+    },
+    "操作媒介及易耗品扩展条款": {
+      "english": "OPERATING MEDIA, VULNERABLE OR CONSUMABLES PROPERTY EXTENSION",
+      "best_match": "企业财产保险附加媒介物、易损易耗品扩展条款（2022版）",
+      "score": 0.545,
+      "sheet": "企业财产保险附加条款"
+    },
+    "知识产权保护条款": {
+      "english": "INTELLECTUAL PROPERTY PROTECTION",
+      "best_match": "企业财产保险附加知识产权保护条款",
+      "score": 0.667,
+      "sheet": "企业财产保险附加条款"
+    }
+  }
+}

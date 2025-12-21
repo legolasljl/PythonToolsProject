@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "智能条款比对工具配置文件 - 客户条款映射",
+    "created": "2025-12-21 13:58:35",
+    "source": "自动生成于客户条款文件分析"
+  },
+  "thresholds": {
+    "exact_match": 0.95,
+    "high_match": 0.75,
+    "medium_match": 0.5,
+    "low_match": 0.3
+  },
+  "client_en_cn_map": {
+    "INTERPRETATION & HEADINGS": "通译和标题条款",
+    "60 DAYS' NOTICE OF CANCELLATION BY INSURER": "保险人60天取消通知条款",
+    "EXPEDITING COSTS": "加快费用条款",
+    "ALL OTHER CONTENTS": "其它物品条款",
+    "ALTERATIONS, ADDITIONS AND REPAIRS": "变更和维修条款",
+    "ESCALATION": "自动升值扩展条款",
+    "AUTOMATIC COVER FOR NEW ASSET, OR NEWLY SET UP COMPANIES AND LOCATIONS": "自动扩展承保新增资产、新增公司和新增地址条款",
+    "UNNAMED LOCATION CLAUSE": "未列明地址条款",
+    "AUTOMATIC CAPITAL ADDITIONS": "增加资产条款",
+    "STOCK DECLARATION & ADJUSTMENT": "仓储财产申报条款",
+    "AUTOMATIC REINSTATEMENT OF SUM INSURED": "自动恢复保险金额条款",
+    "BRAND OR TRADEMARK": "品牌和商标标识条款",
+    "PROFESSIONAL FEES AND CLAIM PREPARATION COSTS": "专业费用及索赔准备费用条款",
+    "TAX CLAUSE": "税金约定条款",
+    "EARTHQUAKE AND TSUNAMI CLAUSE": "地震扩展条款",
+    "ERRORS AND OMISSIONS": "错误和遗漏条款",
+    "THEFT AND ROBBERY": "盗窃、抢劫扩展条款",
+    "FULL THEFT, BURGLARY AND ROBBERY COVER": "盗窃、抢劫全险条款",
+    "DESCRIPTION OF PROPERTY INSURED": "保险财产描述条款",
+    "LOSS NOTIFICATION": "损失通知条款",
+    "NO CONTROL": "非被保险人控制条款",
+    "PUBLIC UTILITY CLAUSE": "公共事业条款",
+    "MULTIPLE INSUREDS CLAUSE": "多个被保险人条款",
+    "PUBLIC AUTHORITIES": "公共机构条款",
+    "FROZEN AND REFRIGERATED PROPERTY CLAUSE": "冷冻冷藏财产条款",
+    "REMOVAL OF DEBRIS": "清除残骸条款",
+    "REINSTATEMENT": "重置价值条款",
+    "STRIKE, RIOT, CIVIL COMMOTION": "罢工、暴动、民众骚乱条款",
+    "TEMPORARY REMOVAL": "临时移动条款",
+    "TIME ADJUSTMENT": "时间调整条款（72小时）",
+    "VEHICLE LOAD": "车辆装载条款",
+    "80% CO-INSURANCE": "80%共保条款",
+    "OUTSIDE ANCILLIARY DEVICES OF BUILDINGS": "建筑物室外附属设备条款",
+    "CONTRACT PRICE": "合同价格条款",
+    "PREFERENCE OF ORIGINAL SUPPLIER": "原供应商优先条款",
+    "NOMINATED LOSS ADJUSTER CLAUSE": "指定公估人条款",
+    "PORTABLE DEVICES EXTENSION CLAUSE": "便携式设备扩展条款",
+    "BREAKAGE OF GLASS EXTENSION CLAUSE": "玻璃破碎扩展条款",
+    "PROPERTY UNDER CARE, CUSTODY AND CONTROL CLAUSE": "代管财产条款",
+    "MORTGAGE CLAUSE": "抵押条款",
+    "WATER TANK AND WATER PIPE BURST EXTENSION CLAUSE": "水箱水管爆裂扩展条款",
+    "NATURE AND GRADUAL LOSS EXCLUSION": "自然及渐变损失除外条款",
+    "INSURED AMOUNT BREAKDOWN CLAUSE": "保额分项条款",
+    "SCOPE OF COVER CLAUSE": "承保范围条款",
+    "MAINTENANCE COST CLAUSE": "维护费用条款",
+    "100% PAYROLL CLAUSE": "100%工资条款",
+    "LOSS OF BOOK DEBTS CLAUSE": "账册损失条款",
+    "ACCUMULATED STOCK CLAUSE": "累积库存条款",
+    "OUTPUT OPTION CLAUSE": "产出选项条款",
+    "CIVIL AUTHORITIES CLAUSE": "政府机构条款",
+    "PREVENTION OF ACCESS CLAUSE": "阻止进入条款",
+    "EXTRA EXPENSES": "额外费用条款",
+    "FAILURE OF PUBLIC UTILITIES CLAUSE": "公共设施故障条款",
+    "INTERDEPENDENCY EXTENSION CLAUSE": "相互依存扩展条款",
+    "MURDER, SUICIDE OR DISEASE OR DEFECTIVE SANITATION CLAUSE": "谋杀、自杀、疾病或卫生缺陷条款",
+    "NEW BUSINESS CLAUSE": "新业务条款",
+    "PREMIUM ADJUSTMENT CLAUSE": "保费调整条款",
+    "LEASED BUILDING/PREMISES EXTENSION": "租赁建筑/场所扩展条款",
+    "CONTINUOUS LOSS CLAUSE": "持续损失条款",
+    "WAIVE DEDUCTIBLE CLAUSE": "免赔额豁免条款",
+    "BOILER AND PRESSURE VESSEL EXPLORSION CLAUSE": "锅炉及压力容器爆炸条款",
+    "MANUFACTURER OR SUPPLIER'S WARRANTIES": "制造商或供应商保证条款",
+    "ACQUISITIONS": "收购条款（90天申报期）",
+    "SHUTDOWN AND RESTART COST CLAUSE": "停工重启费用条款",
+    "OPERATING MEDIA, VULNERABLE OR CONSUMABLES PROPERTY EXTENSION": "操作媒介及易耗品扩展条款",
+    "REPLACEMENT VALUE": "重置价值条款",
+    "INTELLECTUAL PROPERTY PROTECTION": "知识产权保护条款",
+    "NOMINATED ADJUSTER": "指定公估人条款"
+  },
+  "semantic_alias_map": {
+    "地震": [
+      "earthquake",
+      "seismic",
+      "地震海啸",
+      "tsunami"
+    ],
+    "盗窃": [
+      "theft",
+      "robbery",
+      "burglary",
+      "抢劫",
+      "偷盗"
+    ],
+    "罢工": [
+      "strike",
+      "riot",
+      "civil commotion",
+      "暴动",
+      "骚乱"
+    ],
+    "清除残骸": [
+      "debris",
+      "removal",
+      "清理"
+    ],
+    "重置价值": [
+      "reinstatement",
+      "replacement value",
+      "恢复"
+    ],
+    "锅炉": [
+      "boiler",
+      "pressure vessel",
+      "压力容器"
+    ],
+    "玻璃破碎": [
+      "glass",
+      "breakage",
+      "碎裂"
+    ],
+    "临时移动": [
+      "temporary removal",
+      "暂移"
+    ],
+    "冷冻冷藏": [
+      "frozen",
+      "refrigerated",
+      "冷藏物品"
+    ],
+    "自动恢复": [
+      "reinstatement",
+      "automatic",
+      "保险金额"
+    ],
+    "仓储财产": [
+      "stock",
+      "warehouse",
+      "存货申报"
+    ],
+    "升值": [
+      "escalation",
+      "增值",
+      "自动增加"
+    ],
+    "费用": [
+      "cost",
+      "expense",
+      "charges"
+    ],
+    "额外": [
+      "extra",
+      "additional",
+      "附加"
+    ],
+    "公共设施": [
+      "public utility",
+      "utilities",
+      "公用事业"
+    ],
+    "抵押": [
+      "mortgage",
+      "mortgagee",
+      "质押"
+    ]
+  },
+  "exact_clause_map": {
+    "通译和标题条款": "企业财产保险附加通译和标题条款",
+    "加快费用条款": "企业财产保险附加额外费用条款",
+    "其它物品条款": "企业财产保险附加所有其它物品条款",
+    "自动升值扩展条款": "企业财产保险附加自动升值条款",
+    "增加资产条款": "企业财产保险附加增加资产条款(A款）",
+    "仓储财产申报条款": "企业财产保险附加仓储财产申报条款",
+    "自动恢复保险金额条款": "企业财产保险附加自动恢复保险金额条款",
+    "专业费用及索赔准备费用条款": "企业财产保险附加索赔费用条款",
+    "地震扩展条款": "企业财产保险附加地震扩展条款",
+    "错误和遗漏条款": "企业财产保险附加错误和遗漏条款",
+    "盗窃、抢劫扩展条款": "企业财产保险附加盗窃、抢劫保险（2025版）条款",
+    "盗窃、抢劫全险条款": "企业财产保险附加盗窃、抢劫保险（2025版）条款",
+    "保险财产描述条款": "企业财产保险附加指明财产条款",
+    "损失通知条款": "企业财产保险附加损失通知条款",
+    "非被保险人控制条款": "企业财产保险附加不可控制条款",
+    "多个被保险人条款": "企业财产保险附加被保险人条款",
+    "冷冻冷藏财产条款": "企业财产保险附加冷冻、冷藏物品变质条款",
+    "清除残骸条款": "企业财产保险附加清理残骸条款",
+    "重置价值条款": "企业财产保险附加重置价值条款",
+    "罢工、暴动、民众骚乱条款": "企业财产保险附加罢工、暴动、民众骚乱条款",
+    "临时移动条款": "企业财产保险附加临时移动条款",
+    "时间调整条款（72小时）": "企业财产保险附加时间调整条款",
+    "车辆装载条款": "企业财产保险附加车辆装载物条款",
+    "建筑物室外附属设备条款": "企业财产保险附加建筑物外部附属设施条款（A款）",
+    "合同价格条款": "企业财产保险附加合同价格条款",
+    "指定公估人条款": "企业财产保险附加指定公估人条款（A款）",
+    "便携式设备扩展条款": "企业财产保险附加便携式设备扩展条款",
+    "玻璃破碎扩展条款": "企业财产保险附加玻璃破碎扩展条款（C款）",
+    "抵押条款": "企业财产保险附加抵押承受人条款",
+    "水箱水管爆裂扩展条款": "企业财产保险附加水箱、水管爆裂扩展条款（2025版）",
+    "维护费用条款": "企业财产保险附加临时防护费用条款",
+    "累积库存条款": "企业财产保险附加累积库存条款",
+    "额外费用条款": "企业财产保险附加额外费用条款",
+    "免赔额豁免条款": "企业财产保险附加免赔额豁免条款",
+    "锅炉及压力容器爆炸条款": "企业财产保险附加锅炉及压力容器爆炸条款",
+    "停工重启费用条款": "企业财产保险附加赶工费用条款",
+    "操作媒介及易耗品扩展条款": "企业财产保险附加媒介物、易损易耗品扩展条款（2022版）",
+    "知识产权保护条款": "企业财产保险附加知识产权保护条款"
+  },
+  "penalty_keywords": [
+    "除外",
+    "不保",
+    "免责",
+    "不承担",
+    "不负责",
+    "不予赔偿",
+    "exclusion",
+    "exclude",
+    "not cover",
+    "not liable"
+  ],
+  "noise_words": [
+    "的",
+    "和",
+    "或",
+    "与",
+    "及",
+    "等",
+    "之",
+    "其",
+    "the",
+    "a",
+    "an",
+    "of",
+    "and",
+    "or",
+    "to",
+    "for"
+  ]
+}
