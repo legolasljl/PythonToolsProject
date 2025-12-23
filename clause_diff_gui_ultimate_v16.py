@@ -1448,7 +1448,7 @@ class ClauseDiffGUI(QMainWindow):
         """)
         self.batch_btn.clicked.connect(self._show_batch_dialog)
 
-        self.add_btn = QPushButton("⚙️ 映射设置")
+        self.add_btn = QPushButton("🔧 映射设置")
         self.add_btn.setCursor(Qt.PointingHandCursor)
         self.add_btn.setMinimumHeight(52)
         self.add_btn.setStyleSheet(self.batch_btn.styleSheet())
