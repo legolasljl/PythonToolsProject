@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-智能条款比对工具 v16.0 (Full Optimized Edition)
+智能条款比对工具 v16.1 (Full Optimized Edition)
 - [性能] 预处理索引加速匹配 5-10x
 - [算法] 编辑距离容错 + 混合相似度
 - [重构] 多级匹配策略拆分
 - [功能] 批量处理多文件
 - [健壮] 完善异常处理和日志
 - [配置] 外部化JSON配置
+- [新增] 用户自定义映射管理（单条/批量）
+- [新增] 导出时使用库内条款名
 
 Author: Dachi Yijin
-Date: 2025-12-21
+Date: 2025-12-23
 """
 
 import sys
@@ -53,6 +55,15 @@ try:
 except ImportError:
     HAS_CONFIG_MANAGER = False
     logger.warning("未找到 clause_config_manager，使用内置配置")
+
+# 导入映射管理器
+try:
+    from clause_mapping_manager import ClauseMappingManager, get_mapping_manager
+    from clause_mapping_dialog import ClauseMappingDialog
+    HAS_MAPPING_MANAGER = True
+except ImportError:
+    HAS_MAPPING_MANAGER = False
+    logger.warning("未找到 clause_mapping_manager，映射管理功能不可用")
 
 # ==========================================
 # macOS PyQt5 Plugin Fix
@@ -969,8 +980,33 @@ class MatchWorker(QThread):
                     clause.title = translated_title
                     clause.original_title = original_title
 
+                # 检查用户自定义映射
+                user_library_name = None
+                if HAS_MAPPING_MANAGER:
+                    mapping_mgr = get_mapping_manager()
+                    # 按原标题或翻译后标题查找
+                    user_library_name = mapping_mgr.get_library_name(original_title)
+                    if not user_library_name and was_translated:
+                        user_library_name = mapping_mgr.get_library_name(translated_title)
+
                 # 匹配
                 match_result = logic.match_clause(clause, index, is_title_only)
+
+                # 如果有用户映射，优先使用
+                final_matched_name = match_result.matched_name
+                if user_library_name:
+                    final_matched_name = user_library_name
+                    # 用户映射视为精确匹配
+                    match_result = MatchResult(
+                        matched_name=user_library_name,
+                        matched_reg=match_result.matched_reg,
+                        matched_content=match_result.matched_content,
+                        score=1.0,
+                        match_level=MatchLevel.EXACT,
+                        diff_analysis="用户自定义映射",
+                        title_score=1.0,
+                        content_score=match_result.content_score,
+                    )
 
                 # 统计
                 if match_result.match_level == MatchLevel.EXACT:
@@ -989,7 +1025,7 @@ class MatchWorker(QThread):
                     ExcelColumns.CLIENT_ORIG: original_title,
                     ExcelColumns.CLIENT_TRANS: translated_title if was_translated else "",
                     ExcelColumns.CLIENT_CONTENT: clause.content[:500] if clause.content else "",
-                    ExcelColumns.MATCHED_NAME: match_result.matched_name or "无匹配",
+                    ExcelColumns.MATCHED_NAME: final_matched_name or "无匹配",
                     ExcelColumns.REG_NO: match_result.matched_reg,
                     ExcelColumns.MATCHED_CONTENT: match_result.matched_content[:500] if match_result.matched_content else "",
                     ExcelColumns.SCORE: round(match_result.score, 3),
@@ -1062,6 +1098,8 @@ class BatchMatchWorker(QThread):
 
                     # 匹配
                     results = []
+                    mapping_mgr = get_mapping_manager() if HAS_MAPPING_MANAGER else None
+
                     for idx, clause in enumerate(clauses, 1):
                         original_title = clause.title
                         translated_title, was_translated = logic.translate_title(clause.title)
@@ -1069,14 +1107,36 @@ class BatchMatchWorker(QThread):
                             clause.title = translated_title
                             clause.original_title = original_title
 
+                        # 检查用户自定义映射
+                        user_library_name = None
+                        if mapping_mgr:
+                            user_library_name = mapping_mgr.get_library_name(original_title)
+                            if not user_library_name and was_translated:
+                                user_library_name = mapping_mgr.get_library_name(translated_title)
+
                         match_result = logic.match_clause(clause, index, is_title_only)
+
+                        # 如果有用户映射，优先使用
+                        final_matched_name = match_result.matched_name
+                        if user_library_name:
+                            final_matched_name = user_library_name
+                            match_result = MatchResult(
+                                matched_name=user_library_name,
+                                matched_reg=match_result.matched_reg,
+                                matched_content=match_result.matched_content,
+                                score=1.0,
+                                match_level=MatchLevel.EXACT,
+                                diff_analysis="用户自定义映射",
+                                title_score=1.0,
+                                content_score=match_result.content_score,
+                            )
 
                         results.append({
                             ExcelColumns.SEQ: idx,
                             ExcelColumns.CLIENT_ORIG: original_title,
                             ExcelColumns.CLIENT_TRANS: translated_title if was_translated else "",
                             ExcelColumns.CLIENT_CONTENT: clause.content[:500] if clause.content else "",
-                            ExcelColumns.MATCHED_NAME: match_result.matched_name or "无匹配",
+                            ExcelColumns.MATCHED_NAME: final_matched_name or "无匹配",
                             ExcelColumns.REG_NO: match_result.matched_reg,
                             ExcelColumns.MATCHED_CONTENT: match_result.matched_content[:500] if match_result.matched_content else "",
                             ExcelColumns.SCORE: round(match_result.score, 3),
@@ -1245,7 +1305,7 @@ class ClauseDiffGUI(QMainWindow):
     """主界面"""
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("智能条款比对工具 v16.0")
+        self.setWindowTitle("智能条款比对工具 v16.1")
         self.setMinimumSize(950, 850)
         self.setStyleSheet("""
             QMainWindow {
@@ -1258,6 +1318,16 @@ class ClauseDiffGUI(QMainWindow):
             self._config = get_config()
         else:
             self._config = None
+
+        # 初始化映射管理器
+        if HAS_MAPPING_MANAGER:
+            self._mapping_manager = get_mapping_manager()
+            self._mapping_manager.load()
+            # 应用用户映射到配置
+            if self._config:
+                self._mapping_manager.apply_to_config(self._config)
+        else:
+            self._mapping_manager = None
 
         self._setup_ui()
 
@@ -1274,7 +1344,7 @@ class ClauseDiffGUI(QMainWindow):
         title.setStyleSheet("color: #ffffff; font-size: 30px; font-weight: bold;")
         layout.addWidget(title)
 
-        subtitle = QLabel("v16.0 Full Optimized · 索引加速 · 批量处理 · 混合算法")
+        subtitle = QLabel("v16.1 Full Optimized · 索引加速 · 批量处理 · 映射管理")
         subtitle.setAlignment(Qt.AlignCenter)
         subtitle.setStyleSheet("color: rgba(255,255,255,0.6); font-size: 13px;")
         layout.addWidget(subtitle)
@@ -1282,13 +1352,14 @@ class ClauseDiffGUI(QMainWindow):
         # 配置统计
         if self._config:
             stats = self._config.get_stats()
-            stats_text = f"📊 {stats['client_mappings']} 映射 | {stats['semantic_aliases']} 别名 | {stats['keyword_rules']} 关键词"
+            user_mappings = self._mapping_manager.get_mapping_count() if self._mapping_manager else 0
+            stats_text = f"📊 {stats['client_mappings']} 映射 | {user_mappings} 自定义 | {stats['semantic_aliases']} 别名"
         else:
             stats_text = "📊 使用内置配置"
-        stats_label = QLabel(stats_text)
-        stats_label.setAlignment(Qt.AlignCenter)
-        stats_label.setStyleSheet("color: rgba(255,255,255,0.4); font-size: 11px;")
-        layout.addWidget(stats_label)
+        self.stats_label = QLabel(stats_text)
+        self.stats_label.setAlignment(Qt.AlignCenter)
+        self.stats_label.setStyleSheet("color: rgba(255,255,255,0.4); font-size: 11px;")
+        layout.addWidget(self.stats_label)
 
         # 输入卡片
         card = GlassCard()
@@ -1377,7 +1448,7 @@ class ClauseDiffGUI(QMainWindow):
         """)
         self.batch_btn.clicked.connect(self._show_batch_dialog)
 
-        self.add_btn = QPushButton("➕ 添加映射")
+        self.add_btn = QPushButton("⚙️ 映射设置")
         self.add_btn.setCursor(Qt.PointingHandCursor)
         self.add_btn.setMinimumHeight(52)
         self.add_btn.setStyleSheet(self.batch_btn.styleSheet())
@@ -1434,7 +1505,7 @@ class ClauseDiffGUI(QMainWindow):
         layout.addWidget(self.log_text, 1)
 
         # 版本信息
-        version = QLabel("v16.0 Full Optimized · Made with ❤️")
+        version = QLabel("v16.1 Full Optimized · Made with ❤️")
         version.setAlignment(Qt.AlignCenter)
         version.setStyleSheet("color: rgba(255,255,255,0.25); font-size: 11px;")
         layout.addWidget(version)
@@ -1469,16 +1540,59 @@ class ClauseDiffGUI(QMainWindow):
             self.out_input.setText(f)
 
     def _show_add_mapping_dialog(self):
-        if not self._config:
-            QMessageBox.warning(self, "提示", "配置管理器不可用")
-            return
-        dialog = AddMappingDialog(self)
-        if dialog.exec_() == QDialog.Accepted:
-            eng, chn = dialog.get_mapping()
-            if eng and chn:
-                self._config.add_client_mapping(eng, chn)
-                self._config.save()
-                self._append_log(f"✓ 已添加映射: '{eng}' -> '{chn}'", "success")
+        """打开条款映射管理对话框"""
+        if HAS_MAPPING_MANAGER:
+            # 获取当前条款库中的条款名称列表（用于下拉提示）
+            library_clauses = self._get_library_clauses()
+
+            dialog = ClauseMappingDialog(self, library_clauses=library_clauses)
+            dialog.mappings_changed.connect(self._on_mappings_changed)
+            dialog.exec_()
+        elif self._config:
+            # 兼容旧版：使用简单的添加对话框
+            dialog = AddMappingDialog(self)
+            if dialog.exec_() == QDialog.Accepted:
+                eng, chn = dialog.get_mapping()
+                if eng and chn:
+                    self._config.add_client_mapping(eng, chn)
+                    self._config.save()
+                    self._append_log(f"✓ 已添加映射: '{eng}' -> '{chn}'", "success")
+        else:
+            QMessageBox.warning(self, "提示", "映射管理功能不可用")
+
+    def _get_library_clauses(self) -> List[str]:
+        """从当前条款库获取条款名称列表"""
+        library_path = self.lib_input.text().strip()
+        if not library_path or not os.path.exists(library_path):
+            return []
+
+        try:
+            clauses = []
+            wb = openpyxl.load_workbook(library_path, read_only=True)
+            for sheet in wb.sheetnames:
+                ws = wb[sheet]
+                for row in ws.iter_rows(max_col=1, values_only=True):
+                    if row[0] and isinstance(row[0], str):
+                        name = row[0].strip()
+                        if name and len(name) > 3 and name not in clauses:
+                            clauses.append(name)
+            wb.close()
+            return clauses[:500]  # 限制数量防止内存问题
+        except Exception as e:
+            logger.warning(f"读取条款库失败: {e}")
+            return []
+
+    def _on_mappings_changed(self):
+        """映射变更回调：更新配置"""
+        if HAS_MAPPING_MANAGER and self._config:
+            mapping_manager = get_mapping_manager()
+            count = mapping_manager.apply_to_config(self._config)
+            self._append_log(f"✓ 已应用 {count} 条用户映射", "success")
+
+            # 更新统计显示
+            stats = self._config.get_stats()
+            user_mappings = mapping_manager.get_mapping_count()
+            self.stats_label.setText(f"📊 {stats['client_mappings']} 映射 | {user_mappings} 自定义 | {stats['semantic_aliases']} 别名")
 
     def _show_batch_dialog(self):
         if not self.lib_input.text():
